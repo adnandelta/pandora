@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pandora/AssistantScreens/mainassistantscreen.dart';
 import 'package:pandora/Constants/constants.dart';
+import 'package:pandora/SwipeHomeScreens/cartpage.dart';
+import 'package:pandora/SwipeHomeScreens/moredetails.dart';
 import 'package:swipable_stack/swipable_stack.dart';
 import 'package:cool_alert/cool_alert.dart';
 
@@ -67,9 +69,15 @@ class _HomePageState extends State<HomePage> {
                         autoCloseDuration: const Duration(seconds: 2),
                       );
                     }
+                    if (direction == SwipeDirection.down) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MoreDetails()));
+                    }
                   },
                   horizontalSwipeThreshold: 0.4,
-                  verticalSwipeThreshold: 0.8,
+                  verticalSwipeThreshold: 0.6,
                   builder: (context, properties) {
                     // final itemIndex = properties.index % _images.length;
 
@@ -94,7 +102,9 @@ class _HomePageState extends State<HomePage> {
                             SizedBox(
                               height: 280,
                               width: 280,
-                              child: Image.asset("assets/images/amul.png"),
+                              child: Hero(
+                                  tag: 'img',
+                                  child: Image.asset("assets/images/amul.png")),
                             ),
                             SizedBox(
                               height: 22,
@@ -184,7 +194,10 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.green,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => CartPage()));
+          },
           child: Icon(Icons.shopping_bag_outlined)),
     );
   }
