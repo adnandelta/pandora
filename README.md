@@ -30,7 +30,7 @@ bash
   - cloud_firestore: ^4.5.1
 
 
-## Video and APK Link
+## Video, PPT and APK Link
 
 https://drive.google.com/drive/folders/1pezG-SWYwSYqQDyFPAMMd9JT9DC_qzI_?usp=sharing
 
