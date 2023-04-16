@@ -3,10 +3,13 @@ import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 import 'dart:async';
 import 'dart:ui';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:pandora/AssistantScreens/selectlanguage.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(
     MaterialApp(
       home: SplashScreen(),
